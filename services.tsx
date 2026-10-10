@@ -1,0 +1,5 @@
+import { createFileRoute } from '@tanstack/react-router';
+import { PageIntro, ServiceCards, CallToAction } from '@/components/site';
+import { pageHead } from '@/lib/business';
+export const Route = createFileRoute('/services')({ head: () => pageHead('Car Care Services', 'Explore six car care services at ELITE AUTO CARE Hyderabad, from premium washing and interior cleaning to ceramic coating and paint protection.'), component: ServicesPage });
+function ServicesPage() { return <><PageIntro eyebrow="THE ART OF CAR CARE" title="Our signature services." description="A fresh cabin. A refined finish. Protection for the road ahead. Find the right care for your vehicle, and enquire for a tailored quote." /><section className="section"><div className="site-width"><ServiceCards /></div></section><CallToAction /></>; }

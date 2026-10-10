@@ -1,0 +1,15 @@
+import { createFileRoute, Link } from '@tanstack/react-router';
+import { ArrowRight, ArrowUpRight, ArrowDown, MapPin } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { EnquiryButton, ValueStrip, ServiceCards, WhyChooseUs, CallToAction } from '@/components/site';
+import { GalleryGrid } from '@/components/gallery';
+import { pageHead } from '@/lib/business';
+import hero from '@/assets/detailing-hero.jpg';
+import interior from '@/assets/interior-care.jpg';
+
+export const Route = createFileRoute('/')({
+ head: () => pageHead('Premium Car Wash & Detailing', 'ELITE AUTO CARE in Hyderabad. Explore premium car washing, interior detailing, ceramic coating and paint protection.'),
+ component: Index,
+});
+
+function Index() { return <><section className="hero"><img className="hero-photo" src={hero} alt="A graphite luxury sports car being professionally hand-detailed" width={1920} height={1024} fetchPriority="high" /><div className="site-width hero-content enter-animation"><div className="eyebrow">PREMIUM CAR CARE · HYDERABAD</div><h1>EXCELLENCE<br />IN EVERY<br /><span>DETAIL.</span></h1><p className="hero-copy">Premium Car Wash &amp; Detailing<br />for Those Who Expect More.</p><div className="hero-actions"><Button asChild variant="luxury"><Link to="/services">Explore Services<ArrowUpRight /></Link></Button><EnquiryButton variant="luxuryOutline">Book on WhatsApp</EnquiryButton></div><div className="hero-location"><MapPin />HYDERABAD, TELANGANA</div></div><div className="hero-bottom">SCROLL TO DISCOVER <ArrowDown /></div></section><ValueStrip /><section className="section"><div className="site-width"><div className="section-header"><div><div className="eyebrow">OUR SIGNATURE SERVICES</div><h2>Care beyond the ordinary.</h2><p className="section-description">From a refreshing wash to lasting protection, discover a higher standard of care for your car.</p></div><Button asChild variant="luxuryText"><Link to="/services">View All Services<ArrowRight /></Link></Button></div><ServiceCards limit={3} /></div></section><WhyChooseUs /><section className="section"><div className="site-width"><div className="section-header"><div><div className="eyebrow">IN THE DETAILS</div><h2>A closer look at car care.</h2></div><Button asChild variant="luxuryText"><Link to="/gallery">Explore Gallery<ArrowRight /></Link></Button></div><GalleryGrid preview /></div></section><section className="section alt-section"><div className="site-width about-layout"><img className="about-image" src={interior} alt="Professional detailing brush caring for a luxury leather seat" width={1024} height={768} loading="lazy" /><div className="about-copy"><div className="eyebrow">MEET ELITE AUTO CARE</div><h2>More Than a Wash.<br />A Complete Car Care Experience.</h2><p>ELITE AUTO CARE brings a thoughtful approach to car washing and detailing in Hyderabad. From the cabin to the paintwork, our focus is simple: considered care for the vehicle you love.</p><Button asChild variant="luxuryText"><Link to="/about">Discover Our Approach<ArrowRight /></Link></Button></div></div></section><CallToAction /></>; }
